@@ -1,24 +1,17 @@
 import { useEffect } from "react";
-import { useState } from "react"
+import { useForm } from "../hooks/useForm";
 import { Message } from "./Message";
 
 export const FormWhitCostomHook = () =>{
 
-    const [formState, setFormState] = useState({
-        username:'azcoalt',
-        email:'azc@gmail.com'
+    const {formState,onInputChange,onResetForm} = useForm({
+        username:'',
+        email:'',
+        password:''
     });
 
-    const {username,email} = formState;
-
-    const onInputChange = ({target}) =>{
-        const {name,value } = target
-        setFormState({
-            ...formState,
-            [name]:value
-        });
-    }
-
+    const {username,email,password} = formState;
+       
     useEffect(() => {
         //console.log("useEfect call");
     },[]);
@@ -56,9 +49,16 @@ export const FormWhitCostomHook = () =>{
                 onChange={onInputChange}
             />
 
-            {
-                (username === 'azcoalt2') && <Message/>
-            }
+            <input 
+                type="password"
+                className="form-control mt-2"
+                placeholder="contraceña"
+                name="password"
+                value={password}
+                onChange={onInputChange}
+            />
+
+            <button onClick={onResetForm} className="btn btn-primary mt-2">Borrar</button>
         </>
     )
 }
