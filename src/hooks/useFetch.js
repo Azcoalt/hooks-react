@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
 export const useFetch = (url) => {
+    //va estar almacenando los datos 
     const [state, setState] = useState({
         data: null,
         isloading: true,
         hasError: null
     })
 
+    //hace la peticion al url
     const getFetch = async () => {
 
         setState({
@@ -25,6 +27,7 @@ export const useFetch = (url) => {
         
     }
 
+    //usa el efecto cuando hace el cambio de la url
     useEffect(() => {
         getFetch();
     },[url]);
