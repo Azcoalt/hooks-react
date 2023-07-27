@@ -8,10 +8,12 @@ import ReactDOM from 'react-dom/client';
 //import { HooksApp } from './HooksApp';
 import './index.css';
 //import { FocusScreen } from './04-useRef/FocusScreen';
-import { Layaut } from './05-useLayoutEffect/Layaut';
+//import { Layaut } from './05-useLayoutEffect/Layaut';
+//import { Memorize } from './06-memos/Memorize';
+import { MemoHook } from './06-memos/MemoHook';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   //{<React.StrictMode>}
-    < Layaut />
+    < MemoHook />
   //{</React.StrictMode>}
 )
