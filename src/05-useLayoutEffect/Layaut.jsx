@@ -1,8 +1,8 @@
 import { useFetch } from "../hooks/useFetch"
-import { Loading } from "./Loading";
-import { Quot } from "./Quot";
+import { Loading } from "../03-examples/Loading";
+import { Quot } from "../03-examples/Quot";
 
-export const MultipleCustomHooks = () => {
+export const Layaut = () => {
 
     const {data,isloading,hasError} = useFetch('https://pokeapi.co/api/v2/pokemon/ditto');
 
